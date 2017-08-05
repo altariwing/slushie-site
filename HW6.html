@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <Script type="text/javascript">
+    <!--
+
+    //窩是js
+
+
+
+    -->
+    </Script>
+    <style>
+    table {
+        border: 1px solid;
+    }
+    </style>
+</head>
+
+<body>
+    <table style="width:20%" align="center">
+        <caption>確認訂單</caption>
+        <tr>
+            <td>收件人姓名:</td>
+            <td>
+                <input type="text" name="name" maxlength="10" size="12">
+            </td>
+        </tr>
+        <tr>
+            <td>收件人地址:</td>
+            <td>
+                <input type="text" name="address" maxlength="10" size="12">
+            </td>
+        </tr>
+        <tr>
+            <td>付款方式</td>
+            <td>
+                <form name="my_form" method=post target=>
+                    <input type="radio" name="paymethod" value="money" id="money">
+                    <label for="money">現金 </label>
+                    <input type="radio" name="paymethod" value="visa" id="visa" onclick="clickVisa()">
+                    <label for="visa">信用卡</label>
+                    <input type="radio" name="paymethod" value="atm" id="atm">
+                    <label for="atm">ATM轉帳</label>
+                    <!--block or none-->
+                    <div id="visadis" style="display:none">
+                        信用卡號碼:
+                        <input type="text" name="name" maxlength="10" size="12">
+                        <br> 到期年月:
+                        <input type="text" name="name" maxlength="10" size="12">
+                    </div>
+                    <!--block or none-->
+                    <div id="atmdis" style="display:none">
+                        銀行帳號:
+                        <input type="text" name="name" maxlength="10" size="12">
+                        <br> 扣款帳號:
+                        <input type="text" name="name" maxlength="10" size="12">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+    window.onload = function() {
+
+
+
+        var ex1 = document.getElementById('money');
+
+        var ex2 = document.getElementById('visa');
+
+        var ex3 = document.getElementById('atm');
+
+
+
+        ex1.onclick = ismoney;
+
+        ex2.onclick = isvisa;
+
+        ex3.onclick = isatm;
+
+
+
+    }
+
+
+
+    function ismoney() {
+
+        document.getElementById('visadis').style.display = 'none';
+
+        document.getElementById('atmdis').style.display = 'none';
+
+    }
+
+    function isvisa() {
+
+        document.getElementById('atmdis').style.display = 'none';
+
+        document.getElementById('visadis').style.display = 'block';
+
+    }
+
+    function isatm() {
+
+        document.getElementById('visadis').style.display = 'none';
+
+        document.getElementById('atmdis').style.display = 'block';
+
+    }
+    </script>
+    </script>
+</body>
+<!--https://stackoverflow.com/questions/362614/calling-onclick-on-a-radiobutton-list-using-javascript-->
+
+</html>

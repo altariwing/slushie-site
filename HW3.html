@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<Style>
+body {
+    background-color: lightblue;
+}
+	h1{
+		width:50px;
+    height:50px;
+    border-radius:25px;
+    font-size:35px;
+    color:black;
+    line-height:50px;
+    text-align:center;
+    background:yellow;
+	}
+	
+</Style>
+<Script type="text/Javascript">
+
+//宣告陣列+填資料
+var Biglottery = new Array(49);
+for(var i=0;i<Biglottery.length;i++){
+        Biglottery[i]=i;		
+    }
+//大~樂~透~ 洗牌 洗300次
+for(k=0;k<300;k++){
+	var tempNnumber;
+	var l =Math.random()*49 ;
+	var m =Math.random()*49 ;
+	l=parseInt(l);
+	m=parseInt(m);
+	tempNnumber=Biglottery[l];
+	Biglottery[l]=Biglottery[m];
+	Biglottery[m]=tempNnumber;
+}
+//印出
+  
+for(var u=0;u<6;u++)
+{
+  document.write("<h1>"+(Biglottery[u]+1) +"</h1>");   
+}
+
+</Script>
+
+</head>
+<body>
+    
+</body>
+</html>

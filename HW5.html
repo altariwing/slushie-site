@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<style>
+body {
+    background-color: gray;
+}
+h3{
+
+font-size: 300%;
+
+}
+</style>
+<Script type="text/javascript">
+<!--
+//窩是js
+
+//顏色陣列
+var colorSet=[
+"B6E2F9",
+"226D98",
+"FCFCFC",
+"226D98",
+"6BC5F2",
+"58B6E6",
+"289EDC",
+"13486D"]
+//顏色洗牌, 洗500次
+for(k=0;k<500;k++){
+	var tempString = "noo";
+	var l =Math.random()*8 ;
+	var m =Math.random()*8 ;
+	l=parseInt(l);
+	m=parseInt(m);
+	tempString=colorSet[l];
+	colorSet[l]=colorSet[m];
+	colorSet[m]=tempString;
+}
+//宣告球陣列+填資料
+var Biglottery = new Array(10);
+for(var i=0;i<Biglottery.length;i++){
+        Biglottery[i]=i;	
+    }
+//大~樂~透~ 洗牌 洗500次
+for(k=0;k<500;k++){
+	var tempNnumber;
+	var l =Math.random()*10 ;
+	var m =Math.random()*10 ;
+	l=parseInt(l);
+	m=parseInt(m);
+	tempNnumber=Biglottery[l];
+	Biglottery[l]=Biglottery[m];
+	Biglottery[m]=tempNnumber;
+}
+
+//你要幾顆球
+var fourToSeven=parseInt(Math.random()*4)+4;
+
+for(i=0;i<fourToSeven;i++){
+	var whichColor=parseInt(Math.random()*8);
+	document.write("<h3 style=color:#");
+	document.write(colorSet[i]+";>");
+	document.write(Biglottery[i]);
+	document.write("</h3>");
+}
+
+-->
+</Script>
+</head>
+<body>
+    
+</body>
+</html>
